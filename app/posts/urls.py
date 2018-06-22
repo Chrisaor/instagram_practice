@@ -1,6 +1,6 @@
 from django.urls import path
 
-from instagram import views
+from posts import views
 
 urlpatterns = [
     path('', views.index, name='index'),
