@@ -1,4 +1,4 @@
-from django.contrib.auth import authenticate, login
+from django.contrib.auth import authenticate, login, logout
 from django.shortcuts import render, redirect
 
 
@@ -11,10 +11,11 @@ def login_view(request):
             return redirect('index')
         else:
             return redirect('login')
-
-
-
     return render(request, 'members/login.html')
+
+def logout_view(request):
+    logout(request)
+    return redirect('index')
 
 def signup(request):
     return render(request, 'members/signup.html')
