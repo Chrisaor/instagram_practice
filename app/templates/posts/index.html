@@ -5,12 +5,14 @@
 
 {% block content %}
 {% for post in posts %}
+<br>
 <div class="card border-dark mb-3 mx-auto" style="max-width: 600px">
-  <div class="card-header">{{ post.author }}</div>
+  <div class="card-header"><strong>{{ post.author }}</strong></div>
   <div class="card-body text-dark">
       <img class="card-img-top" src="media/{{ post.photo }}" width="500" height="500" alt="">
-    <p class="card-text">{{ post.content }}</p>
-    <p class="card-text">{{ post.pub_date }}</p>
+      <p style="margin: 0;"><strong>314 likes</strong></p>
+    <p class="card-text"><strong>{{ post.author }}</strong> {{ post.content }}</p>
+    <p class="card-text" style="font-size: 0.7rem; color: #999;" >{{ post.pub_date }}</p>
   </div>
 </div>
 {% endfor %}
