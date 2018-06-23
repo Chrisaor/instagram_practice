@@ -1,4 +1,5 @@
 from django.contrib.auth import authenticate, login, logout
+from django.contrib.auth.models import User
 from django.shortcuts import render, redirect
 
 
@@ -18,4 +19,12 @@ def logout_view(request):
     return redirect('index')
 
 def signup(request):
+    if request.method == 'POST':
+        username = request.POST['username']
+        password = request.POST['password']
+        user = User.objects.create_user(username=username, password=password)
+        return redirect('signup-result')
     return render(request, 'members/signup.html')
+
+def signup_result(request):
+    return render(request, 'members/signup_result.html')

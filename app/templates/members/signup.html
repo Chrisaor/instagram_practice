@@ -3,4 +3,32 @@
 {% block title %}Sign Up{% endblock %}
 
 {% block content %}
+<div class="container">
+    <form action="" method="POST">
+        {% csrf_token %}
+        <div class="input-group mb-3" style="width: 400px;">
+            <div class="input-group-prepend" style="width: 120px;">
+                <span class="input-group-text" id="inputGroup-sizing-default" style="width: 120px;">아이디</span>
+            </div>
+            <input type="text" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default" name="username">
+
+        </div>
+        <div class="input-group mb-3" style="width: 400px;">
+            <div class="input-group-prepend" style="width: 120px;">
+                <span class="input-group-text" id="inputGroup-sizing-default" style="width: 120px;">패스워드</span>
+            </div>
+            <input type="password" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default">
+        </div>
+        <div class="input-group mb-3" style="width: 400px;">
+            <div class="input-group-prepend" style="width: 120px;">
+                <span class="input-group-text" id="inputGroup-sizing-default" style="width: 120px;">패스워드 확인</span>
+            </div>
+            <input type="password" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default" name="password">
+
+        </div>
+        <button class="btn btn-light float-right" type="submit">가입하기</button>
+
+
+    </form>
+</div>
 {% endblock %}

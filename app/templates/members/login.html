@@ -7,14 +7,18 @@
     <form action="" method="POST">
         {% csrf_token %}
         <div class="login-window">
-            <div class="">
-                <label class="label" for="">Account</label>
-                <input class="float-right" type="text" name="username">
+            <div class="input-group mb-3" style="width: 400px;">
+            <div class="input-group-prepend" style="width: 120px;">
+                <span class="input-group-text" id="inputGroup-sizing-default" style="width: 120px;">아이디</span>
             </div>
-            <div>
-                <label for="">Password</label>
-                <input class="float-right" type="password" name="password">
+            <input type="text" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default" name="username">
+        </div>
+            <div class="input-group mb-3" style="width: 400px;">
+            <div class="input-group-prepend" style="width: 120px;">
+                <span class="input-group-text" id="inputGroup-sizing-default" style="width: 120px;">패스워드</span>
             </div>
+            <input type="password" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default" name="password">
+        </div>
             <button type="submit" class="btn btn-light">로그인하기</button>
         </div>
     </form>

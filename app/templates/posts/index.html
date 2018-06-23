@@ -4,8 +4,13 @@
 
 
 {% block content %}
+<div class="container">{% if user.is_authenticated %}
+    {{ user }}님, 환영합니다.
+    {% else %}
+    <a href="{% url 'login' %}">로그인</a>하세요! 아이디가 없으면 <a href="{% url 'signup' %}">회원가입</a>
+    {% endif %}
+</div>
 {% for post in posts %}
-<br>
 <div class="card border-dark mb-3 mx-auto" style="max-width: 600px">
   <div class="card-header"><strong>{{ post.author }}</strong></div>
   <div class="card-body text-dark">
