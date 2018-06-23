@@ -1,6 +1,13 @@
 from django.http import HttpResponse
 from django.shortcuts import render
 
+from posts.models import Post
+
+
 def index(request):
-    
-    return render(request, 'posts/index.html')
+    posts = Post.objects.all()
+    context = {
+        'posts':posts,
+    }
+
+    return render(request, 'posts/index.html', context)
