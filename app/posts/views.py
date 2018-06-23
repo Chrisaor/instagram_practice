@@ -9,5 +9,5 @@ def index(request):
     context = {
         'posts':posts,
     }
-
     return render(request, 'posts/index.html', context)
+
